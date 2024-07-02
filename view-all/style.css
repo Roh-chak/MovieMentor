@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  color: whitesmoke;
+  font-family: "Reddit Sans", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>;
+  font-style: normal; */
+}
+
+/* main */
+.main-container {
+  width: 100%;
+}
+
+/* navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 2.8125rem;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.menu-btn {
+  margin-left: 8%;
+}
+
+.login-btn {
+  margin-right: 8%;
+}
+
+/* search */
+#searchFrom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form div {
+  display: flex;
+  align-items: center;
+}
+.search-box {
+  width: 25rem;
+  height: 1.875rem;
+  border-radius: 1.5rem;
+  padding-left: 1.25rem;
+}
+.search-btn {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 1.5rem;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* chip bar */
+.chip-bar {
+  display: flex;
+  width: 80%;
+  gap: 0.635rem;
+  justify-content: center;
+  margin-top: 2.8125rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  flex-wrap: wrap;
+}
+
+.chip-bar a {
+  text-decoration: none;
+}
+
+.bar-item {
+  color: black;
+  height: auto;
+  width: auto;
+  font-size: medium;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  padding: .3125rem .625rem;
+}
+
+.bar-item:hover {
+  background: yellow;
+}
+
+  /* most popular section */
+  .cards {
+    width: 14.25rem;
+    height: 20.8125rem;
+    background-color: #525050;
+    }
+
+  .most-popular, .trending, .new-release {
+    margin: 0 8%;
+  }
+
+  .sub-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5.25rem;
+  }
+
+  .view-all {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  .movie-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1.875rem;
+    row-gap: 6rem;
+  }
+
+  .poster {
+    width: 220px;
+    height: 325px;
+    position: relative;
+    border: whitesmoke solid .25rem;
+    border-radius:.1875rem;
+  }
+
+  .poster img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .link {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .year {
+    margin-top: 0;
+  }
+  .title {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+
+  .card-details {
+    position: absolute;
+    z-index: 2024;
+    width: 100%;
+    height: 100%;
+    background-color: #1414147d;
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+  }
+
+  .card-details:hover {
+    opacity: 1;
+  }
+
+  footer {
+    width: auto;
+    background-color: #1f1e1e;
+    height: 9.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8.25rem;
+  }
+  /* footer */
+  footer p {
+    font-weight: 400;
+  }

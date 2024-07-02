@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>view all</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-container">
+    <nav>
+      <!-- <img src="" alt=""> -->
+      <p class="menu-btn">Menu</p>
+      <form id="searchForm" target="_blank" action="search-list.html" method="GET">
+        <div>
+          <input class="search-box" type="text" id="searchInput" name="query" placeholder="Search...">
+          <button class="search-btn" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22" viewBox="0 0 50 50">
+              <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+      <p class="login-btn">Login</p>
+    </nav>
+
+        <!--chip bar -->
+        <div class="chip-bar">
+            <a class="genre-btn" href="search-list.html?genre=28&gname=action">
+              <div class="bar-item action">Action</div>
+            </a>
+            <a href="search-list.html?genre=35&gname=comedy">
+              <div class="bar-item comedy">Comedy</div>
+            </a>
+            <a href="search-list.html?genre=878&gname=sci-fi">
+              <div class="bar-item sci-fi">Sci-fi</div>
+            </a>
+            <a href="search-list.html?genre=99&gname=documentry">
+              <div class="bar-item documentry">Documentry</div>
+            </a>
+            <a href="search-list.html?genre=18&gname=drama">
+              <div class="bar-item drama">Drama</div>
+            </a>
+            <a href="search-list.html?genre=10749&gname=romantic">
+              <div class="bar-item romantic">Romantic</div>
+            </a>
+            <a href="search-list.html?genre=27&gname=horror">
+              <div class="bar-item horror">Horror</div>
+            </a>
+            <a href="search-list.html?genre=53&gname=thriller">
+              <div class="bar-item 5">Thriller</div>
+            </a>
+            <a href="search-list.html?genre=14&gname=fantasy">
+              <div class="bar-item 5">Fantasy</div>
+            </a>
+            <a href="search-list.html?genre=36&gname=history">
+              <div class="bar-item 5">History</div>
+            </a>
+            <a href="search-list.html?genre=adventure&gname=12">
+              <div class="bar-item 5">Adventure</div>
+            </a>
+            <a href="search-list.html?genre=10402&gname=music">
+              <div class="bar-item 5">Music</div>
+            </a>
+            <a href="search-list.html?genre=9648&gname=mystery">
+              <div class="bar-item 5">Mystery</div>
+            </a>
+            <a href="search-list.html?genre=10752&gname=war">
+              <div class="bar-item 5">War</div>
+            </a>
+            <a href="search-list.html?genre=37&gname=western">
+              <div class="bar-item 5">Western</div>
+            </a>
+            <a href="search-list.html?genre=16&gname=animation">
+              <div class="bar-item 5">Animation</div>
+            </a>
+            <a href="search-list.html?genre=35&gname=crime">
+              <div class="bar-item 5">Crime</div>
+            </a>
+            <a href="search-list.html?genre=10751&gname=family">
+              <div class="bar-item 5">Family</div>
+            </a>
+          </div>
+  
+            <div class="most-popular">
+              <div class="sub-heading">
+                  <h2 class="sub-heading-text">Result for</h2>
+              </div>
+              <div class="movie-container most-popular-container">
+                <div class="card0 cards"></div>
+                <div class="card1 cards"></div>
+                <div class="card2 cards"></div>
+                <div class="card3 cards"></div>
+                <div class="card4 cards"></div>
+                <div class="card5 cards"></div>
+                <div class="card6 cards"></div>
+                <div class="card7 cards"></div>
+                <div class="card8 cards"></div>
+                <div class="card9 cards"></div>
+                <div class="card10 cards"></div>
+                <div class="card11 cards"></div>
+                <div class="card12 cards"></div>
+                <div class="card13 cards"></div>
+                <div class="card14 cards"></div>
+                <div class="card15 cards"></div>
+                <div class="card16 cards"></div>
+                <div class="card17 cards"></div>
+                <div class="card18 cards"></div>
+                <div class="card19 cards"></div>
+
+                  <!-- <div class="card">
+                      <a class="movie-link" href="">
+                          <img class="movie-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FLxygVwUP7urWWbh58c8uOEoTHD7ld9iyVJrmmth0pMhgBbRuVR1meGEfLCC5OtNe8E&usqp=CAU" alt="">
+                          <div class="card-details">
+                              <div>
+                                  <h1 class="rating">8.7/10</h1>
+                                  <h1 class="category">sci-fi</h1>    
+                              </div>    
+                          </div>
+                      </a>
+                      <p class="card-title">Interstellar</p>
+                      <p class="card-year">2013</p>
+                  </div>
+  
+                  <div class="card">
+                      <a class="movie-link" href="">
+                          <img class="movie-img" src="https://lh4.googleusercontent.com/proxy/667mTMCt-IV9NdHQkhOaC9FDB3Ox9IljRdLTIMU0ayoS8n_rFpZcErGGFUOzYG4y5Kn1-femSr_6B3RYMgkC2nKg1sgcg54Z0R_FT127d9twl1YAyHYG" alt="">
+                          <div class="card-details">
+                              <div>
+                                  <h1 class="rating">9/10</h1>
+                                  <h1 class="category">Action</h1>    
+                              </div>    
+                          </div>
+                      </a>
+                      <p class="card-title">Interstellar</p>
+                      <p class="card-year">2013</p>
+                  </div>
+  
+                  <div class="card">
+                      <a class="movie-link" href="">
+                          <img class="movie-img" src="https://www.tallengestore.com/cdn/shop/products/Gangs_Of_Wasseypur_-_Bollywood_Cult_Classic_Hindi_Movie_Poster_8a6323e6-0199-4d1e-9d8f-85a0b2369430.jpg?v=1570245960" alt="">
+                          <div class="card-details">
+                              <div>
+                                  <h1 class="rating">8.2/10</h1>
+                                  <h1 class="category">Action</h1>    
+                              </div>    
+                          </div>
+                      </a>
+                      <p class="card-title">Interstellar</p>
+                      <p class="card-year">2013</p>
+                  </div>
+  
+                  <div class="card">
+                      <a class="movie-link" href="">
+                          <img class="movie-img" src="https://m.media-amazon.com/images/I/71thFiIUSpL._AC_UF1000,1000_QL80_.jpg" alt="">
+                          <div class="card-details">
+                              <div>
+                                  <h1 class="rating">8.8/10</h1>
+                                  <h1 class="category">Sci-fi</h1>    
+                              </div>    
+                          </div>
+                      </a>
+                      <p class="card-title">Interstellar</p>
+                      <p class="card-year">2013</p>
+                  </div>
+
+                  <div class="card">
+                    <a class="movie-link" href="">
+                        <img class="movie-img" src="https://m.media-amazon.com/images/I/71thFiIUSpL._AC_UF1000,1000_QL80_.jpg" alt="">
+                        <div class="card-details">
+                            <div>
+                                <h1 class="rating">8.8/10</h1>
+                                <h1 class="category">Sci-fi</h1>    
+                            </div>    
+                        </div>
+                    </a>
+                    <p class="card-title">Interstellar</p>
+                    <p class="card-year">2013</p>
+                </div> -->
+              </div>
+            </div>
+            <!-- pagination -->
+              <div class="pagination-container">
+                <!-- <a href=""> -->
+                  <div class="load-more-btn">
+                    <p>Load more</p>
+                  </div>
+                <!-- </a>  -->
+              </div>
+
+            <footer>
+              <p>@2024</p>
+            </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

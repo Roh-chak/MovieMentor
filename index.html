@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My movie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- navbar -->
+        <nav>
+            <!-- <img src="" alt=""> -->
+            <p class="menu-btn">Menu</p>
+            <form id="searchForm" target="_blank" action="search-list/search-list.html" method="GET">
+              <div>
+                <input class="search-box" type="text" id="searchInput" name="query" placeholder="Search...">
+                <button class="search-btn" type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22" viewBox="0 0 50 50">
+                    <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <p class="login-btn">Login</p>
+        </nav>
+        <!-- movie recommendation -->
+        <div class="recommended-movies">
+            <div class="recommended-movie-div">
+                <!-- <img class="recommended-movie-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt=""> -->
+            </div>
+            <div class="movie-description">
+                <!-- <h1 class="title">Interstellar</h1>
+                <h3 class="release-date">2013</h3>
+                <h3 class="category">action</h3>
+                <div class="rating">
+                    <div class="imdb-svg">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#f3ce13" d="M4 7c-1.103 0-2 .897-2 2v6.4c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V9c0-1.103-.897-2-2-2H4Zm1.4 2.363h1.275v5.312H5.4V9.362Zm1.962 0H9l.438 2.512.287-2.512h1.75v5.312H10.4v-3l-.563 3h-.8l-.512-3v3H7.362V9.362Zm8.313 0H17v1.2c.16-.16.516-.363.875-.363.36.04.84.283.8.763v3.075c0 .24-.075.404-.275.524-.16.04-.28.075-.6.075-.32 0-.795-.196-.875-.237-.08-.04-.163.275-.163.275h-1.087V9.362Zm-3.513.037H13.6c.88 0 1.084.078 1.325.237.24.16.35.397.35.838v3.2c0 .32-.15.563-.35.762-.2.2-.484.288-1.325.288h-1.438V9.4Zm1.275.8v3.563c.2 0 .488.04.488-.2v-3.126c0-.28-.247-.237-.488-.237Zm3.763.675c-.12 0-.2.08-.2.2v2.688c0 .159.08.237.2.237.12 0 .2-.117.2-.238l-.037-2.687c0-.12-.043-.2-.163-.2Z"></path></g></svg>
+                    </div>
+                    <p>8/10</p>
+                </div>
+                <p class="movie-synopsis">Synopsis</p>
+                <p class="movie-synopsis-texts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deserunt fugit praesentium iste suscipit, voluptatum corporis placeat atque odio asperiores dolor tempore tempora necessitatibus distinctio aliquam eaque laboriosam. Vitae, temporibus.</p>               -->
+            </div>
+        </div>
+
+        <!--chip bar -->
+        <div class="chip-bar">
+          <a class="genre-btn" href="search-list/search-list.html?genre=28&gname=action">
+            <div class="bar-item action">Action</div>
+          </a>
+          <a href="search-list/search-list.html?genre=35&gname=comedy">
+            <div class="bar-item comedy">Comedy</div>
+          </a>
+          <a href="search-list/search-list.html?genre=878&gname=sci-fi">
+            <div class="bar-item sci-fi">Sci-fi</div>
+          </a>
+          <a href="search-list/search-list.html?genre=99&gname=documentry">
+            <div class="bar-item documentry">Documentry</div>
+          </a>
+          <a href="search-list/search-list.html?genre=18&gname=drama">
+            <div class="bar-item drama">Drama</div>
+          </a>
+          <a href="search-list/search-list.html?genre=10749&gname=romantic">
+            <div class="bar-item romantic">Romantic</div>
+          </a>
+          <a href="search-list/search-list.html?genre=27&gname=horror">
+            <div class="bar-item horror">Horror</div>
+          </a>
+          <a href="search-list/search-list.html?genre=53&gname=thriller">
+            <div class="bar-item 5">Thriller</div>
+          </a>
+          <a href="search-list/search-list.html?genre=14&gname=fantasy">
+            <div class="bar-item 5">Fantasy</div>
+          </a>
+          <a href="search-list/search-list.html?genre=36&gname=history">
+            <div class="bar-item 5">History</div>
+          </a>
+          <a href="search-list/search-list.html?genre=adventure&gname=12">
+            <div class="bar-item 5">Adventure</div>
+          </a>
+          <a href="search-list/search-list.html?genre=10402&gname=music">
+            <div class="bar-item 5">Music</div>
+          </a>
+          <a href="search-list/search-list.html?genre=9648&gname=mystery">
+            <div class="bar-item 5">Mystery</div>
+          </a>
+          <a href="search-list/search-list.html?genre=10752&gname=war">
+            <div class="bar-item 5">War</div>
+          </a>
+          <a href="search-list/search-list.html?genre=37&gname=western">
+            <div class="bar-item 5">Western</div>
+          </a>
+          <a href="search-list/search-list.html?genre=16&gname=animation">
+            <div class="bar-item 5">Animation</div>
+          </a>
+          <a href="search-list/search-list.html?genre=35&gname=crime">
+            <div class="bar-item 5">Crime</div>
+          </a>
+          <a href="search-list/search-list.html?genre=10751&gname=family">
+            <div class="bar-item 5">Family</div>
+          </a>
+      </div>
+
+        <!-- most popular section -->
+        <div class="most-popular">
+            <div class="sub-heading mp-sub-heading">
+                <h2 name="most-popular-p" class="sub-heading-text">Most popular</h2>
+                <a class="view-all" target="_blank" href="view-all/view-all.html?category=most-popular">View all</a>    
+            </div>
+            <div class="movie-container most-popular-container">
+              <div class="mp-card0 cards"></div>
+              <div class="mp-card1 cards"></div>
+              <div class="mp-card2 cards"></div>
+              <div class="mp-card3 cards"></div>
+                <!-- <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div> -->
+            </div>
+        </div>
+
+        <!-- trending section -->
+        <div class="trending">
+            <div class="sub-heading">
+                <h2 class="sub-heading-text">Trending</h2>
+                <a class="view-all" target="_blank" href="view-all/view-all.html?category=trending">View all</a>    
+            </div>
+            <div class="movie-container trending-movie">
+              <div class="tm-card0 cards"></div>
+              <div class="tm-card1 cards"></div>
+              <div class="tm-card2 cards"></div>
+              <div class="tm-card3 cards"></div>
+                <!-- <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div> -->
+            </div>
+        </div>
+
+        <!-- new-release -->
+        <div class="new-release">
+            <div class="sub-heading">
+                <h2 class="sub-heading-text">New release</h2>
+                <a class="view-all" target="_blank" href="view-all/view-all.html?category=new-release">View all</a>    
+            </div>
+            <div class="movie-container latest-movie">
+              <div class="nm-card0 cards"></div>
+              <div class="nm-card1 cards"></div>
+              <div class="nm-card2 cards"></div>
+              <div class="nm-card3 cards"></div>
+                <!-- <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="poster">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtGMlBJ_ULYD6KNatQGBk3sasuyJm0DZx9y67bQ0ZJzw&s" alt="">
+                      <a class="link" href="">
+                      <div class="card-details">
+                        <div>
+                            <h1 class="rating">9/10</h1>
+                            <h1 class="cs-category">sci-fi</h1>    
+                        </div>    
+                      </div>
+                      </a>
+                    </div>
+                    
+                    <div class="details">
+                      <p class="cs-title">Interstellar</p>
+                      <p class="year">2013</p>
+                    </div>
+                  </div> -->
+            </div>
+        </div>
+        
+        <footer>
+            <p>@2024</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.44/dist/lenis.min.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
