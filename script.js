@@ -24,7 +24,7 @@ async function recommendationPosterApi (result) {
 
   try {
     const p = await fetch(url, options);
-    const moviePoster = await response.json();
+    const moviePoster = await p.json();
     console.log(result);
 
     posterOutput = document.querySelector('.recommended-movie-div');
@@ -166,7 +166,7 @@ async function trendingMovieFetching () {
     console.error(error);
   } 
 }
-trendingMovieFetching();
+// trendingMovieFetching();
 
 
 
