@@ -29,7 +29,7 @@ async function recommendationPosterApi (result) {
 
     posterOutput = document.querySelector('.recommended-movie-div');
     posterOutput.innerHTML += `
-    <img class="recommended-movie-img" src="${moviePoster[0].i.imageUrl}" alt="">
+    <img class="recommended-movie-img" src="${moviePoster.d[0].i.imageUrl}" alt="">
     `;
 
   } catch (error) {
