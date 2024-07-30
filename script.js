@@ -13,17 +13,33 @@ randomNumber = Math.floor(Math.random() * 100);
 
 // for recommendation poster
 async function recommendationPosterApi (result) {
+  const url = `https://imdb-movies-web-series-etc-search.p.rapidapi.com/${result[randomNumber].title}.json`;
+  const options = {
+    method: 'GET',
+    headers: {
+      'x-rapidapi-key': '10501af11amsh23d3ab5f364ce9bp110a89jsn5f8e32edc574',
+      'x-rapidapi-host': 'imdb-movies-web-series-etc-search.p.rapidapi.com'
+    }
+  };
+
   try {
-    let p = await fetch(`http://www.omdbapi.com/?t=${result[randomNumber].title}&apikey=4425ba46`);
-    let moviePoster = await p.json();
+    const p = await fetch(url, options);
+    const moviePoster = await response.json();
+    console.log(result);
+
     posterOutput = document.querySelector('.recommended-movie-div');
     posterOutput.innerHTML += `
-    <img class="recommended-movie-img" src="${moviePoster.Poster}" alt="">
-    `
+    <img class="recommended-movie-img" src="${moviePoster[0].i.imageUrl}" alt="">
+    `;
+
   } catch (error) {
     console.error(error);
-  }  
+  }
+
+    // let p = await fetch(`http://www.omdbapi.com/?t=${result[randomNumber].title}&apikey=4425ba46`);
+    // let moviePoster = await p.json();
 }
+
 // recommendation data
 function recommendationData(result) {
   let recommendationOutput = `
@@ -94,7 +110,7 @@ async function fetchApi () {
     
     recommendationPosterApi(result);
     recommendationData(result);
-    mostPopularMoviePoster(result)
+    // mostPopularMoviePoster(result)
     console.log(result);
   } catch (error) {
     console.error(error);
@@ -120,9 +136,10 @@ async function trendingMovieFetching () {
       const result = await response.json();
       let tramdingMovieCard = document.querySelector(`.tm-card${i}`);
 
-      // omdb api
-      const catApi = await fetch (`http://www.omdbapi.com/?t=${result.data.movies.edges[i].node.originalTitleText.text}&apikey=4425ba46`)
-      const catApiRes = await catApi.json();
+      // omdb api for category http
+      // const catApi = await fetch (`http://www.omdbapi.com/?t=${result.data.movies.edges[i].node.originalTitleText.text}&apikey=4425ba46`)
+      // const catApiRes = await catApi.json();
+      // ${catApiRes.Genre}
       
       tramdingMovieCard.innerHTML += `
       <div class="card">
@@ -132,7 +149,7 @@ async function trendingMovieFetching () {
         <div class="card-details">
           <div>
               <h1 class="rating">${result.data.movies.edges[i].node.ratingsSummary.aggregateRating}/10</h1>
-              <h1 class="cs-category">${catApiRes.Genre}</h1>    
+              <h1 class="cs-category"></h1>
           </div>    
         </div>
         </a>
@@ -206,4 +223,4 @@ async function latestMovieApiFetching () {
     console.error(error);
   }  
 }
-latestMovieApiFetching();
+// latestMovieApiFetching();
