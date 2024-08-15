@@ -1,36 +1,82 @@
 window.onload = function () {
+  const lenis = new Lenis()
+  lenis.on('scroll', (e) => {
+  })
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+  requestAnimationFrame(raf)
+  
+  
   const params = new URLSearchParams(window.location.search);
   let movieName = params.get('name');
-  console.log(movieName);
+  let movieId = params.get('id');
+  console.log(movieId);
 
   async function aboutMovieApiFetching () {
-    const p = await fetch(`http://www.omdbapi.com/?t=${movieName}&plot=full&apikey=4425ba46`);
-    const response = await p.json();
-    console.log(response);
+    const url = `https://mdblist.p.rapidapi.com/?i=${movieId}`;
+    const options = {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': '10501af11amsh23d3ab5f364ce9bp110a89jsn5f8e32edc574',
+        'x-rapidapi-host': 'mdblist.p.rapidapi.com'
+      }
+    };
 
+    const urlForGenre = `https://imdb146.p.rapidapi.com/v1/title/?id=${movieId}`;
+    const optionsForGenre = {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': '10501af11amsh23d3ab5f364ce9bp110a89jsn5f8e32edc574',
+        'x-rapidapi-host': 'imdb146.p.rapidapi.com'
+      }
+    };
 
-    let poster = document.querySelector('.about-movie-div').innerHTML += `
-    <img class="about-movie-img" src="${response.Poster}" alt="">
-    `;
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      console.log(result);
+
+      const responseForGenre = await fetch(urlForGenre, optionsForGenre);
+      const resultForGenre = await responseForGenre.json();
+      console.log(resultForGenre);
+
+      let poster = document.querySelector('.about-movie-div').innerHTML += `
+      <img class="about-movie-img" src="${result.poster}" alt="">
+      `;
+    
+      let title = document.querySelector('.title').innerHTML += `
+      <h1 class="title">${result.title}</h1>
+      `;
+    
+      let movieSubDetails = document.querySelector('.sub-details');
+      movieSubDetails.innerHTML += `
+        <p class="release-date">${result.year}</p>
+        <p class="rated">${result.certification}</p>
+        <p class="duration">${result.runtime}</p>
+      `;
   
-    let title = document.querySelector('.title').innerHTML += `
-    <h1 class="title">${response.Title}</h1>
-    `;
+      let language = document.querySelector('.language').innerHTML += ` ${result.language}`
+      let category = document.querySelector('.category').innerHTML += ` ${resultForGenre.genres.genres.map((ele) => {
+        return ele.text
+      })}`
   
-    let movieSubDetails = document.querySelector('.sub-details');
-    movieSubDetails.innerHTML += `
-      <p class="release-date">${response.Year}</p>
-      <p class="rated">${response.Rated}</p>
-      <p class="duration">${response.Runtime}</p>
+      let ratingDetails = document.querySelector('.rating-details').innerHTML +=`
+      <p class="rating-num">${result.ratings[0].value}</p>
+      <p class="votes">Votes:${result.ratings[0].votes}</p>
+      `;
+
+    // storyline
+    let storyline = document.querySelector('.storyline').innerHTML +=`
+    <p class="movie-synopsis-texts">${result.description}</p>
     `;
 
-    let language = document.querySelector('.language').innerHTML += ` ${response.Language}`
-    let category = document.querySelector('.category').innerHTML += ` ${response.Genre}`
+  
+    } catch (error) {
+      console.error(error);
+    }
 
-    let ratingDetails = document.querySelector('.rating-details').innerHTML +=`
-    <p class="rating-num">${response.imdbRating}</p>
-    <p class="votes">Votes:${response.imdbVotes}</p>
-    `;
 
     // streaming
     let streamingOn = document.querySelector('.streaming-sites');
@@ -73,16 +119,10 @@ window.onload = function () {
     streamingOptionsApi();
     
 
-    // storyline
-    let storyline = document.querySelector('.storyline').innerHTML +=`
-    <p class="movie-synopsis-texts">${response.Plot}</p>
-    `;
-
-
     // movie images
     let images = document.querySelector('.photos');
     async function movieImagesApiFetching () {
-      const url = `https://online-movie-database.p.rapidapi.com/title/v2/get-images?tconst=${response.imdbID}&first=20`;
+      const url = `https://online-movie-database.p.rapidapi.com/title/v2/get-images?tconst=${movieId}&first=20`;
       const options = {
         method: 'GET',
         headers: {
@@ -114,7 +154,7 @@ window.onload = function () {
     // cast
     let cast = document.querySelector('.cast-container');
     async function castApiFetching () {
-      const castApiIdUrl = `https://tvshow.p.rapidapi.com/Movie/Search?Language=en-US&Content=${response.Title}&Adult=false&Page=1`;
+      const castApiIdUrl = `https://tvshow.p.rapidapi.com/Movie/Search?Language=en-US&Content=${movieName}&Adult=false&Page=1`;
       const castApiIdOptions = {
         method: 'GET',
         headers: {
@@ -130,6 +170,7 @@ window.onload = function () {
       } catch (error) {
         console.error(error);
       }
+
       async function castFetching (castIdResult) {
         const castApiUrl = `https://tvshow.p.rapidapi.com/Cast/Movie?ItemId=${castIdResult[0].id}&Language=en-US`;
         const castApiOptions = {
@@ -165,10 +206,10 @@ window.onload = function () {
     // more like this
     async function moreLikeApi () {
       // omdb for id fetching
-      const idResponse = await fetch(`http:www.omdbapi.com/?t=${movieName}&apikey=4425ba46`);
-      const idResult = await idResponse.json();  
+      // const idResponse = await fetch(`http:www.omdbapi.com/?t=${movieName}&apikey=4425ba46`);
+      // const idResult = await idResponse.json();  
 
-      const url = `https://movies-tv-shows-database.p.rapidapi.com/?movieid=${idResult.imdbID}&page=1`;
+      const url = `https://movies-tv-shows-database.p.rapidapi.com/?movieid=${movieId}&page=1`;
       const options = {
         method: 'GET',
         headers: {
@@ -185,27 +226,52 @@ window.onload = function () {
 
 
         for (let i=0; i<4; i++) {
+          const similerMovieUrl = `https://movies-tv-shows-database.p.rapidapi.com/?movieid=${mltResult.movie_results[i].imdb_id}`;
+          const similerMovieOptions = {
+            method: 'GET',
+            headers: {
+              'x-rapidapi-key': '6d3f841844mshc40627c965f2b6bp12d124jsnea16e77e06a6',
+              'x-rapidapi-host': 'movies-tv-shows-database.p.rapidapi.com',
+              Type: 'get-movie-details'
+            }
+          };    
+          const similerMovieResponse = await fetch(similerMovieUrl, similerMovieOptions);
+          const similerMovieResult = await similerMovieResponse.json();
+          console.log(similerMovieResult);  
         // fetching movie from omdb
-        const mResponse = await fetch(`http:www.omdbapi.com/?t=${mltResult.movie_results[i].title}&apikey=4425ba46`);
-        const mResult = await mResponse.json();  
+        // const mResponse = await fetch(`http:www.omdbapi.com/?t=${mltResult.movie_results[i].title}&apikey=4425ba46`);
+        // const mResult = await mResponse.json(); 
+
+        const posterUrl = `https://moviesdatabase.p.rapidapi.com/titles/${mltResult.movie_results[i].imdb_id}`;
+        const posterOptions = {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-key': '10501af11amsh23d3ab5f364ce9bp110a89jsn5f8e32edc574',
+            'x-rapidapi-host': 'moviesdatabase.p.rapidapi.com'
+          }
+        };
+
+        const posterResponse = await fetch(posterUrl, posterOptions);
+        const posterResult = await posterResponse.json();
+        console.log(posterResult);
 
           let moreLikeThis = document.querySelector('.movie-container').innerHTML += `
           <div class="card">
           <div class="poster">
-            <img src="${mResult.Poster}" alt="">
-            <a class="link" href="../about-movie/about-movie.html?name=${mResult.Title}">
+            <img src="${posterResult.results.primaryImage.url}" alt="">
+            <a class="link" href="../about-movie/about-movie.html?name=${similerMovieResult.title}">
             <div class="card-details">
               <div>
-                  <h1 class="rating">${mResult.imdbRating}/10</h1>
-                  <h1 class="cs-category">${mResult.Genre}</h1>    
+                  <h1 class="rating">${similerMovieResult.imdb_rating}/10</h1>
+                  <h1 class="cs-category">${similerMovieResult.genres[0]} ${similerMovieResult.genres[1]} ${similerMovieResult.genres[2]}</h1>    
               </div>    
             </div>
             </a>
           </div>
           
           <div class="details">
-            <p class="cs-title">${mResult.Title}</p>
-            <p class="year">${mResult.Year}</p>
+            <p class="cs-title">${similerMovieResult.title}</p>
+            <p class="year">${similerMovieResult.year}</p>
           </div>
         </div>
           `;      
@@ -214,18 +280,7 @@ window.onload = function () {
         console.error(error);
       }
     }
-    moreLikeApi();
+    // moreLikeApi();
   }
   aboutMovieApiFetching();
 }
-
-
-
-const lenis = new Lenis()
-lenis.on('scroll', (e) => {
-})
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-requestAnimationFrame(raf)
