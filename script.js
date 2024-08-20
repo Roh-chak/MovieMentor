@@ -359,7 +359,7 @@ async function recommendationData(result) {
       <p>${topImdbMoviesData[randomNumber].rating}</p>
   </div>
   <p class="movie-synopsis">Synopsis</p>
-  <p class="movie-synopsis-texts">${topImdbMoviesData[randomNumber].description}</p>
+  <p class="movie-synopsis-texts">${topImdbMoviesData[randomNumber].description.slice(0,110)}...</p>
   `;
   
   let recommendedMovies = document.querySelector('.movie-description');

@@ -189,7 +189,7 @@ window.onload = function () {
             cast.innerHTML +=`
             <div class="cast-div">
               <div class="cast-img">
-                <img src="${castResult[i].image}" alt="">
+                <img class='cast-image' src="${castResult[i].image}" alt="">
               </div>
                 <h4 class="cast-name">${castResult[i].name}</h4>
                 <p class="cast-name-in-movie">${castResult[i].character}</p>    

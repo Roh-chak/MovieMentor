@@ -203,8 +203,8 @@ form div {
 }
 
 .photos-img img {
-  height: 200px;
-  width: 250px;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
 }
 
 .bar-item {
@@ -269,9 +269,8 @@ form div {
   }
 
   .cast-img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    width: 70%;
+    border-radius: 14%;
   }
 
   /* more like this */
@@ -371,6 +370,109 @@ form div {
   
   footer p {
     font-weight: 400;
+  }
+
+  @media (width <= 393px) {
+  .imdb-svg {
+   display: block;
+  }
+  nav {
+      display: flex;
+      gap: 1.375rem;
+      justify-content: center;
+      width: 100%;
+      height: 2.8125rem;
+      align-items: center;
+      margin: 0 6%;
+      margin-top: 0.625rem;
+  }
+
+  .search-box {
+    width: 12rem;
+    height: 1.875rem;
+    border-radius: 1.5rem;
+    padding-left: 1.25rem;
+    column-gap: 0.625rem;
+  }
+
+  .search-btn {
+    background-color: white;
+    height: 28px;
+    width: 28px;
+  }
+  .search-svg {
+    height: 14px;
+    width: 14px;
+  }
+
+  .title, .sub-details, .lang-cat, .rating, .streaming-text {
+    margin-right: 6%;
+  }
+
+  .about-movie-div {
+    width: 10.75625rem;
+    height: 16.832812rem;
+    border: whitesmoke solid 0.25rem;
+    border-radius: 0.1875rem;
+    background-color: #515050;
+  }
+
+  .about-movie {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  .photo-subheading, .photos, .sub-heading, .cast {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    /* margin-right: ; */
+  }
+
+  .about-movie-img {
+    width: 10.75625rem;
+    height: 16.832812rem;
+  }
+
+  .movie-description {
+    margin-left: 0.625rem;
+  }
+
+  .release-date, .rated, .duration {
+    font-size: 0.625rem;
+  }
+  .lang-cat, .rating-num, .streaming-text {
+    font-size: 0.625rem;
+  }
+
+  .sub-details, .lang-cat {
+    margin-bottom: 0.875rem;
+  }
+
+  .streaming-text {
+    display: block;
+  }
+
+  .streaming-sites {
+    height: 2.25rem;
+  }
+
+  .cast-container {
+    gap: 10px;
+    overflow-x: scroll;
+  }
+
+  .streaming-platform{
+    height: 34px;
+  }
+
+  .storyline {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
   }
 
   @media (width <= 320px) {

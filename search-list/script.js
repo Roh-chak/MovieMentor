@@ -244,7 +244,7 @@ window.onload = function () {
           <div class="card-details">
             <div>
                 <h1 class="rating">${genreResult.results[i].vote_average}/10</h1>
-                <h1 class="category">${movieGenres}
+                <h1 class="category">${movieGenres[0]} ${movieGenres[1]} ${movieGenres[2]}
                 </h1>    
             </div>
           </div>
