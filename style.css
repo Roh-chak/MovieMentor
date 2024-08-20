@@ -540,6 +540,9 @@ form div {
 }
 
 @media (width <= 393px) {
+  nav {
+    justify-content: space-between;
+  }
   .recommended-movie-img {
     width: 10.75625rem;
     height: 16.832812rem;
@@ -554,8 +557,29 @@ form div {
     justify-content: flex-start;
   }
   .search-box {
-    width: 10rem;
+    width: 8rem;
+    height: 22px;
   }
+
+  .login-btn {
+    margin-right: 6%;
+  }
+
+  .menu-btn {
+    margin-left: 6%;
+  }
+
+  .search-btn {
+    background-color: white;
+    height: 28px;
+    width: 28px;
+  }
+
+  .search-svg {
+    height: 14px;
+    width: 14px;
+  }
+
 }
 
 @media (width <= 360px) {
