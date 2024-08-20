@@ -63,8 +63,8 @@ window.onload = function () {
       })}`
   
       let ratingDetails = document.querySelector('.rating-details').innerHTML +=`
-      <p class="rating-num">${result.ratings[0].value}</p>
-      <p class="votes">Votes:${result.ratings[0].votes}</p>
+      <p class="rating-num">${result.ratings[0].value}/10</p>
+      <p class="votes">Votes: ${result.ratings[0].votes.toLocaleString()}</p>
       `;
 
     // storyline

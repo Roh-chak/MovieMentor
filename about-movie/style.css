@@ -387,9 +387,16 @@ form div {
       margin-top: 0.625rem;
   }
 
+  .login-btn {
+    margin-right: 6%;
+  }
+
+  .menu-btn {
+    margin-left: 6%;
+  }
   .search-box {
-    width: 12rem;
-    height: 1.875rem;
+    width: 8rem;
+    height: 22px;
     border-radius: 1.5rem;
     padding-left: 1.25rem;
     column-gap: 0.625rem;
@@ -472,6 +479,10 @@ form div {
   .storyline {
     margin-left: 6%;
     margin-right: 6%;
+  }
+
+  .language-s, .streaming-text {
+    font-weight: 200;
   }
   }
 
