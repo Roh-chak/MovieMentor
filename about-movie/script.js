@@ -54,7 +54,7 @@ window.onload = function () {
       movieSubDetails.innerHTML += `
         <p class="release-date">${result.year}</p>
         <p class="rated">${result.certification}</p>
-        <p class="duration">${result.runtime}</p>
+        <p class="duration">${result.runtime}m</p>
       `;
   
       let language = document.querySelector('.language').innerHTML += ` ${result.language}`
