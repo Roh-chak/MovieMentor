@@ -146,10 +146,7 @@ window.onload = function () {
           <p class="year">${result.contents[i].release_date.slice(0,4)}</p>
         </div>
       </div>
-      `;          if (ele.id===movieGenreNum[i]) {
-        movieGenres.push(ele.name)
-      }
-
+      `;
     }
 
     } catch (error) {
