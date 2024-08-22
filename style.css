@@ -355,15 +355,15 @@ form div {
 
   @media (width <= 1440px) {
     .login-btn {
-      margin-right: 12rem;
+      margin-right: 8rem;
     }
     .menu-btn {
-      margin-left: 12rem;
+      margin-left: 8rem;
     }
 
     .recommended-movies {
-      margin-left: 12rem;
-      margin-right: 12rem;
+      margin-left: 8rem;
+      margin-right: 8rem;
     }
 
     .chip-bar {
@@ -372,8 +372,8 @@ form div {
     }
 
     .most-popular, .trending, .new-release {
-      margin-left: 12rem;
-      margin-right: 12rem;
+      margin-left: 8rem;
+      margin-right: 8rem;
     }
 
   }

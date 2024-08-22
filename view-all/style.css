@@ -189,8 +189,9 @@ form div {
   @media (width <= 393px) {
     .movie-container {
       grid-template-columns: auto auto;
+      column-gap: 1rem;
       row-gap: 4rem;
-    }
+  }
     .imdb-svg {
      display: block;
     }
@@ -224,8 +225,8 @@ form div {
       height: 28px;
       width: 28px;
     }
-    .search-svg {
-      height: 14px;
+
+    .search-btn svg {
       width: 14px;
     }
         
@@ -239,7 +240,7 @@ form div {
     }
     .movie-container {
       flex-wrap: wrap;
-      gap: 1rem;
+      /* gap: 1rem; */
     }
     .sub-heading {
       margin-top: 0.25rem;
@@ -255,6 +256,9 @@ form div {
     .card {
       width: 10.580625rem;
     }
+    .year {
+      margin-top: .5rem;
+    }
     .poster {
       width: 10.580625rem;
       height: 15.14953125rem;
@@ -264,3 +268,18 @@ form div {
     }
     }
   
+    @media (width <= 378px) {
+      .cards {
+        width: 9.580625rem;
+        height: 14.149531rem;
+      }
+
+      .poster {
+        width: 9.580625rem;
+        height: 14.149531rem;
+      }
+
+      .year {
+        margin-top: .5rem;
+      }
+    }

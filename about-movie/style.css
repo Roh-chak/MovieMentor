@@ -84,7 +84,7 @@ form div {
 
 .title {
   margin: 0;
-  font-size: 40px;
+  font-size: 3.25rem;
 }
 
 .sub-details {
@@ -242,6 +242,7 @@ form div {
   .cast-container {
     width: 100%;
     display: flex;
+    justify-content: center;
     gap: 44px;
   }
 
@@ -372,6 +373,77 @@ form div {
     font-weight: 400;
   }
 
+  @media (width <= 1920px) {
+    nav {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+
+  .about-movie-img, .about-movie-div {
+      width: 23.1rem;
+      height: 33.075rem;
+  }
+
+  .title {
+    font-size: 3.25rem;
+  }
+
+  .release-date, .rated, .duration {
+    font-size: 1.1375rem;
+  }
+
+  .lang-cat {
+    font-size: 1.1rem;
+  }
+
+  .rating-num {
+    font-size: 1.125rem;
+  }
+
+  .votes {
+    font-size: 1rem;
+  }
+
+  .streaming-text {
+    font-size: 1.3rem;
+  }
+
+  .streaming-platform {
+    height: 3.65625rem;
+  }
+
+  .movie-synopsis, .photo-subheading, .sub-heading-text {
+    border-left: solid yellow .5rem;
+    font-size: 1.5rem;
+  }
+
+  .view-all {
+    font-size: 1.3rem;
+  }
+
+  .storyline p {
+    font-size: 1.3rem;
+  }
+
+  .photos-img {
+    height: 16.25rem;
+    width: 20.3125rem;
+  }
+
+  .cast-img {
+    width: 12.5rem;
+    height: 13.375rem;
+  }
+
+  .cast-name {
+    font-size: 1.3rem;
+  } 
+
+  .cast-name, .cast-name-in-movie {
+    font-size: 1.1rem;
+  }
+  }
+
   @media (width <= 393px) {
   .imdb-svg {
    display: block;
@@ -406,8 +478,7 @@ form div {
     height: 28px;
     width: 28px;
   }
-  .search-svg {
-    height: 14px;
+  .search-btn svg {
     width: 14px;
   }
 
