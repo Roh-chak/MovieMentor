@@ -125,28 +125,54 @@ window.onload = function () {
         let subHeading = document.querySelector('.sub-heading-text').innerHTML = `
         Result for "<span class='searched-movie'>${query}</span>"
         `;
-        
-        let card = document.querySelector(`.card${i}`);  
-        card.innerHTML += `
-        <div class="card">
-        <div class="poster">
-          <img src="${result.contents[i].poster_path}" alt="" loading='lazy'>
-          <a class="link" target="_blank" href="../about-movie/about-movie.html?name=${result.contents[i].title}">
-          <div class="card-details">
-            <div>
-                <h1 class="rating">${result.contents[i].vote_average}/10</h1>
-                <h1 class="category">${result.contents[i].genres[0]} ${result.contents[i].genres[1]} ${result.contents[i].genres[2]}</h1>    
-            </div>    
+
+        if (result.contents[i].contentType === 'movie') {
+          let card = document.querySelector(`.card${i}`);  
+          card.innerHTML += `
+          <div class="card">
+          <div class="poster">
+            <img src="${result.contents[i].poster_path}" alt="" loading='lazy'>
+            <a class="link" target="_blank" href="../about-movie/about-movie.html?name=${result.contents[i].title}">
+            <div class="card-details">
+              <div>
+                  <h1 class="rating">${result.contents[i].vote_average}/10</h1>
+                  <h1 class="category">${result.contents[i].genres[0]} ${result.contents[i].genres[1]} ${result.contents[i].genres[2]}</h1>    
+              </div>    
+            </div>
+            </a>
           </div>
-          </a>
+          
+          <div class="details">
+            <p class="title">${result.contents[i].title}</p>
+            <p class="year">${result.contents[i].release_date.slice(0,4)}</p>
+          </div>
         </div>
+        `;  
+        } else {
+          let card = document.querySelector(`.card${i}`);  
+          card.innerHTML += `
+          <div class="card">
+          <div class="poster">
+            <img src="${result.contents[i].poster_path}" alt="" loading='lazy'>
+            <a class="link" target="_blank" href="../about-movie/about-movie.html?name=${result.contents[i].title}">
+            <div class="card-details">
+              <div>
+                  <h1 class="rating">${result.contents[i].vote_average}/10</h1>
+                  <h1 class="category">${result.contents[i].genres[0]} ${result.contents[i].genres[1]} ${result.contents[i].genres[2]}</h1>    
+              </div>    
+            </div>
+            </a>
+          </div>
+          
+          <div class="details">
+            <p class="title">${result.contents[i].title}</p>
+            <p class="year">${result.contents[i].first_aired.slice(0,4)}</p>
+          </div>
+        </div>
+        `;  
+
+        }
         
-        <div class="details">
-          <p class="title">${result.contents[i].title}</p>
-          <p class="year">${result.contents[i].release_date.slice(0,4)}</p>
-        </div>
-      </div>
-      `;
     }
 
     } catch (error) {
