@@ -227,3 +227,98 @@ form div {
   footer p {
     font-weight: 400;
   }
+
+  @media (width <= 393px) {
+    .movie-container {
+      grid-template-columns: auto auto;
+      column-gap: 1rem;
+      row-gap: 2rem;
+    }
+    .imdb-svg {
+     display: block;
+    }
+    nav {
+        display: flex;
+        gap: 1.375rem;
+        justify-content: space-between;
+        width: 100%;
+        height: 2.8125rem;
+        align-items: center;
+        margin-top: 0.625rem;
+    }
+  
+    .login-btn {
+      margin-right: 6%;
+    }
+  
+    .menu-btn {
+      margin-left: 6%;
+    }
+    .search-box {
+      width: 8rem;
+      height: 22px;
+      border-radius: 1.5rem;
+      padding-left: 1.25rem;
+      column-gap: 0.625rem;
+    }
+  
+    .search-btn {
+      background-color: white;
+      height: 28px;
+      width: 28px;
+    }
+
+    .search-btn svg {
+      width: 14px;
+    }
+        
+    .title {
+      font-size: 1rem;
+      /* margin-right: ; */
+    }
+
+    .most-popular, .trending, .new-release {
+      margin: 0 1rem;
+    }
+    .movie-container {
+      flex-wrap: wrap;
+      /* gap: 1rem; */
+    }
+    .sub-heading {
+      margin-top: 0.25rem;
+    }
+    .mp-sub-heading {
+      margin-top: 0;
+    }
+    .cards {
+      width: 10.580625rem;
+      height: 15.14953125rem;
+      margin-bottom: 5.625rem;
+    }
+    .card {
+      width: 10.580625rem;
+    }
+    .year {
+      margin-top: 0.375rem;
+      font-size: 0.75rem;
+    }
+      .poster {
+      width: 10.580625rem;
+      height: 15.14953125rem;
+    }
+    footer {
+      margin-top: 3.25rem;
+    }
+    }
+  
+    @media (width <= 378px) {
+      .cards {
+        width: 9.580625rem;
+        height: 14.149531rem;
+      }
+
+      .poster {
+        width: 9.580625rem;
+        height: 14.149531rem;
+      }
+    }

@@ -190,7 +190,7 @@ form div {
     .movie-container {
       grid-template-columns: auto auto;
       column-gap: 1rem;
-      row-gap: 4rem;
+      row-gap: 2rem;
   }
     .imdb-svg {
      display: block;
@@ -231,7 +231,7 @@ form div {
     }
         
     .title {
-      font-size: 1.25rem;
+      font-size: 1rem;
       /* margin-right: ; */
     }
 
@@ -257,9 +257,10 @@ form div {
       width: 10.580625rem;
     }
     .year {
-      margin-top: .5rem;
+      margin-top: 0.375rem;
+      font-size: 0.75rem;
     }
-    .poster {
+      .poster {
       width: 10.580625rem;
       height: 15.14953125rem;
     }
@@ -277,9 +278,5 @@ form div {
       .poster {
         width: 9.580625rem;
         height: 14.149531rem;
-      }
-
-      .year {
-        margin-top: .5rem;
       }
     }
