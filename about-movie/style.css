@@ -456,6 +456,7 @@ form div {
       height: 2.8125rem;
       align-items: center;
       margin-top: 0.625rem;
+      font-size: 1rem;
   }
 
   .login-btn {
@@ -484,6 +485,10 @@ form div {
 
   .title, .sub-details, .lang-cat, .rating, .streaming-text {
     margin-right: 6%;
+  }
+
+  .votes {
+    font-size: 0.75rem;
   }
 
   .about-movie-div {
@@ -549,6 +554,10 @@ form div {
   .storyline {
     margin-left: 6%;
     margin-right: 6%;
+  }
+
+  .storyline p {
+    font-size:  1rem;
   }
 
   .language-s, .streaming-text {
