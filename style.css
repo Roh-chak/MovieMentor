@@ -465,6 +465,11 @@ form div {
   .search-btn {
     background-color: white;
   }
+
+  .search-btn svg {
+    width: 14px;
+  }
+
   .recommended-movies {
     margin-left: 1rem;
     margin-right: 1rem;
