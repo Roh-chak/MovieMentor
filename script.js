@@ -461,7 +461,7 @@ async function trendingMovieFetching () {
       <div class="card">
       <div class="poster">
         <img src="${result.data.movies.edges[i].node.primaryImage.url}" alt="" loading='lazy'>
-        <a class="link" target="_blank" href="about-movie/about-movie.html?name=${result.data.movies.edges[i].node.originalTitleText.text}">
+        <a class="link" target="_blank" href="about-movie/about-movie.html?name=${result.data.movies.edges[i].node.originalTitleText.text}&id=${result.data.movies.edges[i].node.id}">
         <div class="card-details">
           <div>
               <h1 class="rating">${result.data.movies.edges[i].node.ratingsSummary.aggregateRating}/10</h1>
@@ -560,6 +560,7 @@ async function latestMovieData (result) {
 
     const movieResponse = await fetch(movieDetailsUrl, movieDetailsOptions);
     const movieDetails = await movieResponse.json();
+    console.log(movieDetails)
 
     let movieRating = movieDetails.imdb_rating.substr(0,3);
 
@@ -569,7 +570,7 @@ async function latestMovieData (result) {
     <div class="card">
     <div class="poster">
       <img src=${movieId.titleResults.results[0].titlePosterImageModel.url} alt="" loading='lazy'>
-      <a class="link" target="_blank" href="about-movie/about-movie.html?name=${movieDetails.title}">
+      <a class="link" target="_blank" href="about-movie/about-movie.html?name=${movieDetails.title}&id=${movieDetails.imdb_id}">
       <div class="card-details">
         <div>
             <h1 class="rating">${movieRating}/10</h1>

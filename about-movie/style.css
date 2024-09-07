@@ -21,6 +21,12 @@ nav {
   z-index: 3;
 }
 
+.logo {
+  height: 50px;
+  margin-left: 9%;
+}
+
+
 .menu-btn {
   margin-left: 8%;
 }
@@ -242,7 +248,8 @@ form div {
   .cast-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    overflow-x: auto;
     gap: 44px;
   }
 
@@ -459,8 +466,15 @@ form div {
       font-size: 1rem;
   }
 
+  .logo {
+    height: 26px;
+    margin-left: 4%;
+}
+
+
   .login-btn {
-    margin-right: 6%;
+    margin-right: 4%;
+    font-size: 14px;
   }
 
   .menu-btn {

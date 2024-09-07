@@ -320,12 +320,12 @@ window.onload = function () {
             <div class="card">
             <div class="poster">
               <img src="${topImdbMoviesData[i].big_image}" alt="" loading='lazy'>
-              <a class="link" target="_blank" href="../about-movie/about-movie.html?name=${topImdbMoviesData[i].title}">
+              <a class="link" target="_blank" href="../about-movie/about-movie.html?name=${topImdbMoviesData[i].title}&id=${topImdbMoviesData[i].imdbid}">
               <div class="card-details">
                 <div>
                     <h1 class="rating">${topImdbMoviesData[i].rating}/10</h1>
                     <h1 class="category">${topImdbMoviesData[i].genre}</h1>    
-                </div>    
+                </div> 
               </div>
               </a>
             </div>
@@ -376,7 +376,7 @@ window.onload = function () {
         <div class="card">
         <div class="poster">
           <img src="${result.data.movies.edges[i].node.primaryImage.url}" alt="" loading='lazy'>
-          <a class="link" target="_blank" href=../about-movie/about-movie.html?name="${result.data.movies.edges[i].node.originalTitleText.text}">
+          <a class="link" target="_blank" href=../about-movie/about-movie.html?name="${result.data.movies.edges[i].node.originalTitleText.text}&id=${result.data.movies.edges[i].node.id}">
           <div class="card-details">
             <div>
                 <h1 class="rating">${result.data.movies.edges[i].node.ratingsSummary.aggregateRating}/10</h1>
@@ -399,6 +399,7 @@ window.onload = function () {
       try {
         const response = await fetch(trendingMovieUrl, trendingMovieOptions);
         const result = await response.json();
+        console.log(result);
         trendingMovieData(result);
       } catch (error) {
       console.error(error);

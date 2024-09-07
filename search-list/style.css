@@ -24,6 +24,12 @@ nav {
   margin-top: 10px;
 }
 
+.logo {
+  height: 50px;
+  margin-left: 9%;
+}
+
+
 .menu-btn {
   margin-left: 8%;
 }
@@ -246,9 +252,16 @@ form div {
         align-items: center;
         margin-top: 0.625rem;
     }
+
+    .logo {
+      height: 26px;
+      margin-left: 4%;
+  }
+
   
     .login-btn {
-      margin-right: 6%;
+      margin-right: 4%;
+      font-size: 14px;
     }
   
     .menu-btn {
