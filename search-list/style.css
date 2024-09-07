@@ -244,47 +244,45 @@ form div {
      display: block;
     }
     nav {
-        display: flex;
-        gap: 1.375rem;
-        justify-content: space-between;
-        width: 100%;
-        height: 2.8125rem;
-        align-items: center;
-        margin-top: 0.625rem;
-    }
-
-    .logo {
-      height: 26px;
-      margin-left: 4%;
+      display: flex;
+      gap: 1.375rem;
+      justify-content: space-around;
+      width: 100%;
+      height: 2.8125rem;
+      align-items: center;
+      margin-top: 0.625rem;
   }
 
-  
-    .login-btn {
-      margin-right: 4%;
-      font-size: 14px;
-    }
-  
-    .menu-btn {
-      margin-left: 6%;
-    }
-    .search-box {
-      width: 8rem;
-      height: 22px;
-      border-radius: 1.5rem;
-      padding-left: 1.25rem;
-      column-gap: 0.625rem;
-    }
-  
-    .search-btn {
-      background-color: white;
-      height: 28px;
-      width: 28px;
-    }
+  .login-btn {
+    margin-right: 4%;
+  }
 
-    .search-btn svg {
-      width: 14px;
-    }
-        
+  .logo {
+    height: 26px;
+    margin-left: 4%;
+}
+
+  .menu-btn {
+    margin-left: 6%;
+  }
+  .search-box {
+    width: 7rem;
+    height: 20px;
+    border-radius: 1.5rem;
+    padding-left: 1.25rem;
+    column-gap: 0.625rem;
+  }
+
+  .search-btn {
+    background-color: white;
+    height: 26px;
+    width: 28px;
+  }
+
+  .search-btn svg {
+    width: 14px;
+  }
+      
     .title {
       font-size: 1rem;
       /* margin-right: ; */
