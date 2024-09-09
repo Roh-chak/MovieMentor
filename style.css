@@ -600,6 +600,18 @@ form div {
 
 }
 
+@media (width <= 370px) {
+  .login-btn {
+    margin-right: 6%;
+  }
+  .search-box {
+    width: 7rem;
+  }
+  .logo {
+    margin-left: 5%;
+  }
+}
+
 @media (width <= 360px) {
   .search-box {
     width: 8.5625rem;
