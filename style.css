@@ -653,8 +653,18 @@ form div {
 }
 
 @media (width <= 360px) {
+  .login-btn {
+    margin-right: 6%;
+  }
   .search-box {
-    width: 8.5625rem;
+    width: 7rem;
+  }
+  .logo {
+    margin-left: 5%;
+  }
+
+  .search-box {
+    width: 6.5625rem;
   }
   .title {
     font-size: 1rem;
